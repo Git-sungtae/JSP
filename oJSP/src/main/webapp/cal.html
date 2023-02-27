@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="Cal" method="post" name = "frm">
+	<h3>첫번째 숫자를 입력하세요</h3>
+	<input type = "text" name = value1>
+	<h3>두번째 숫자를 입력하세요</h3>
+	<input type = "text" name = value2><p>
+	<input type="submit" value="입력완료">
+	</form>
+	
+<script type="text/javascript">
+function chk() {
+	if(!frm.value1.value){
+		alert("첫번째 숫자를 입력하세요");
+		frm.value1.focus();
+		return false;
+	}
+	/*  || frm.num.value.trim() == "" */
+	if(isNaN(frm.value1.value) || frm.value1.value.replace(/\s/g, "") == ""){
+		alert("첫번째 숫자를 제대로 입력하세요");
+		frm.value1.value = "";
+		frm.value1.focus();
+		return false;
+	}
+	if(!frm.value2.value){
+		alert("두번째 숫자를 입력하세요");
+		frm.value2.focus();
+		return false;
+	}
+	/*  || frm.num.value.trim() == "" */
+	if(isNaN(frm.value2.value) || frm.value2.value.replace(/\s/g, "") == ""){
+		alert("두번째 숫자를 제대로 입력하세요");
+		frm.value2.value = "";
+		frm.value2.focus();
+		return false;
+	}
+	
+	return true;
+}	
+</script>
+</body>
+</html>

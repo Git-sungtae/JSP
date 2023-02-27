@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>개인정보</h2>
+	<form action="Person" method = "post" name="frm" onsubmit="return chk()" accept-charset="utf-8">
+		<table border = "1" bgcolor="yellow">
+			<tr>
+				<td>이름</td>
+				<td> <input type = "text" name="name"> </td>
+			</tr>
+			<tr>
+				<td>아이디</td>
+				<td> <input type = "text" name="id"> </td>
+			</tr>		
+			<tr>
+				<td>암호</td>
+				<td> <input type = "password" name="password"> </td>
+			</tr>		
+			<tr>
+				<td>성별</td>
+				<td> <input type = "radio" value="men" name="gender" checked="checked">남자<br>
+					 <input type = "radio" value="women" name="gender">여자</td>
+			</tr>
+			<tr>
+				<td>메일 수신</td>
+				<td> <input type = "checkbox" value="announce" name="notice">공지<br>
+					 <input type = "checkbox" value="advertise" name="notice">광고<br>
+					 <input type = "checkbox" value="ship" name="notice">배송</td>
+			</tr>
+			<tr>
+				<td>직업</td>
+				<td><select name="job">
+						<option value = "singer">가수</option>
+						<option value = "general">장군</option>
+						<option value = "officer">공무원</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> <input type="submit" value="확인" id="ok"> </td>
+				<td> <input type="submit" value="입력취소" id="cancle"> </td>
+			</tr>										
+		</table>
+	</form>
+	
+<script type="text/javascript">
+	function chk() {
+		if (!frm.name.value || frm.name.value.trim() == "") {
+			alert("이름을 입력하세요");
+			return false;
+		}
+		
+		if (!frm.id.value || frm.id.value.trim() == "") {
+			alert("ID를 입력하세요");
+			return false;
+		}
+		
+		if (!frm.password.value || frm.password.value.trim() == "") {
+			alert("비밀번호를 입력하세요");
+			return false;
+		}
+		
+		var chk_count = 0;
+		for (var i = 0; i < frm.notice.length; i++) {
+			if (frm.notice[i].checked == true) {
+				chk_count++;
+			}
+		}
+		
+		if (chk_count == 0) {
+			alert("하나 이상 체크하세요");
+			return false;
+		}
+		
+		return true;
+		
+	}
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 뷰단에서 서버단으로 숫자를 받아와서, 1부터 숫자까지(num)까지의 합계를 구하기 -->
+	<h1>숫자를 입력하세요</h1>
+	<!-- 자바로 하는건 첫글자를 대문자로 쓰는게 관례 -->
+	<!-- onsubmit="" : 값의 유효성 검증을 ""에서 받겠다. → 주로 자바스크립트로 -->
+	<form action="Add3" onsubmit="return chk()" name = "frm">
+		숫자 : <input type = "text" name = "num"><p>
+		위치 : <input type = "text" name = "loc"><p>
+		<input type = "submit" value="확인">
+		
+	</form>
+	
+<script type="text/javascript">
+	function chk() {
+		if(!frm.num.value){
+			alert("id를 입력하세요");
+			frm.num.focus();
+			return false;
+		}
+		/*  || frm.num.value.trim() == "" */
+		if(isNaN(frm.num.value) || frm.num.value.replace(/\s/g, "") == ""){
+			alert("숫자가 아님");
+			frm.num.value = "";
+			frm.num.focus();
+			return false;
+		}
+		
+		return true;
+	}	
+
+</script>
+</body>
+</html>
