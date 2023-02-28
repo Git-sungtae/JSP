@@ -29,8 +29,11 @@ public class Cal extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//파라미터로 가져온 변수 Int로 파싱
-		int num1 = Integer.parseInt(request.getParameter("value1"));
-		int num2 = Integer.parseInt(request.getParameter("value2"));
+//		int num1 = Integer.parseInt(request.getParameter("value1"));
+//		int num2 = Integer.parseInt(request.getParameter("value2"));
+		int num1 = 5;
+		int num2 = 0;
+		
 		
 		//사칙연산 수행
 		int sum = num1 + num2;
@@ -42,21 +45,22 @@ public class Cal extends HttpServlet {
 		}
 		int mul = num1 * num2;
 		
-		double div = 0;
 		try {
-			div = num1 / num2;
+			double div = (double)num1 / num2;
+			//response할 Writer객체 생성
+			PrintWriter out = response.getWriter();
+			out.println("<html><body><h1>Calculator</h1>");
+			out.println("Add : " + sum + "<p>" + "Sub : " + sub + "<p>"
+						+ "Mul : " + mul + "<p>" + "Div : " + div);
+			out.println("</html></body>");
 		} catch (ArithmeticException e) {
-			div = 0;
+			System.out.println(e);
 		}
 		
+
 		
-		//respose할 Writer객체 생성
-		PrintWriter out = response.getWriter();
-		out.println("<html><body><h1>Calculator</h1>");
-		out.println("Add : " + sum + "<p>" + "Sub : " + sub + "<p>"
-					+ "Mul : " + mul + "<p>" + "Div : " + div);
 		
-		out.println("</html></body>");
+
 		
 		
 	}

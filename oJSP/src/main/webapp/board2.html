@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="board2.jsp" method="post" name="frm" onsubmit="return chk()">
+	<table bgcolor = "pink">
+		<tr>
+			<td>
+				제목
+			</td>
+			<td>
+				<input type="text" placeholder="제목을 입력하세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '제목을 입력하세요'" name="title">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				작성자
+			</td>
+			<td>
+				<input type="text"  name="writer" placeholder="작성자를 입력하세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '작성자를 입력하세요'" >
+			</td>
+		</tr>		
+		<tr>
+			<td>
+				내용
+			</td>
+			<td>
+				<textarea name="content" cols="50" rows="20" placeholder="내용을 입력하세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '내용을 입력하세요'" ></textarea>
+			</td>
+		</tr>		
+		<tr>
+			<td>
+				<input type="submit" value="확인" name = "ok">
+			</td>
+			<td>
+				<input type="submit" value="입력취소" name = "cancle">
+			</td>
+		</tr>	
+	</table>
+</form>	
+
+<script type="text/javascript" src="board2.js"></script>
+</body>
+</html>

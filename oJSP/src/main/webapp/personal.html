@@ -72,8 +72,13 @@
 		}
 		
 		if (chk_count == 0) {
-			alert("하나 이상 체크하세요");
-			return false;
+			let cfm = confirm("정말 체크하지 않으시겠습니까?");
+			if (cfm) {
+				return true;
+			} else{
+				alert("다시 체크해주세요");
+				return false;
+			}
 		}
 		
 		return true;

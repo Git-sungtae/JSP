@@ -56,18 +56,16 @@ public class Person extends HttpServlet {
 		out.println("PW : " + pw + "<p>");
 		out.println("성별 : " + gender + "<p>");
 		out.println("직업 : " + job + "<p>");
-		out.println("취득경로 : |");
-		for (String s : notice) {
-			out.println(" " + s + " |");
+		out.println("수신메일 : |");
+		if (notice == null) {
+			out.println(" 없음 |");
+			out.println("</body></html>");
+		} else {
+			for (String s : notice) {
+				out.println(" " + s + " |");
+			}
+			out.println("</body></html>");
 		}
-		out.println("</body></html>");
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }
