@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+<!-- init.jsp : web.xmp 세팅값 가져오기 -->
+	<context-param>
+		<param-name>DBName1</param-name>
+		<param-value>Oracle</param-value>
+	</context-param>
+	<context-param>
+		<param-name>DBName2</param-name>
+		<param-value>Mysql</param-value>
+	</context-param>
 </web-app>
