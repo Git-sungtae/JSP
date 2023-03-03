@@ -1,0 +1,30 @@
+body{
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1{
+	text-align: left;
+	color: red;
+}
+
+.chkbox{
+	display : flex;
+	text-align: left;
+	justify-content: center;
+	align-items: center;
+}
+
+.ok_btn.p{
+	width : 30%;
+	height : 30%;
+	border: 1px;
+	background: gray;
+	text-align: center;
+}
+
+.ok_btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
