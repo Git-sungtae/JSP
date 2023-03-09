@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>0 월요일</h1>
+	<h1>1 비온다</h1>
+	<h1>2 귀찮다</h1>
+	<h1>3 늦게 일어났다</h1>
+	<h1>4 지각</h1>
+	<h1>5 대박</h1>
+	<h1>6 초대박</h1>
+	
+	<hr />
+	
+	<h2>0 월요일</h2>
+	<h2>1 비온다</h2>
+	<h2>2 귀찮다</h2>
+	<h2>3 늦게 일어났다</h2>
+	<h2>4 지각</h2>
+	<h2>5 대박</h2>
+	<h2>6 초대박</h2>
+	
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	//내부에서 function으로 index가 3의 배수인 요소만 선택
+	$('h1').filter(function (index) {
+				return index%3 == 0;
+		 }).css({
+			'background' : 'red',
+			'color' : 'white'
+			});
+	
+	$('h2').css('background','orange')//1번
+		   .filter(':even')
+		   .css('color', 'red')
+		   .end() //앞의 filter를 종료하고 한단계 위로 → 1번은 적용된 상태로
+		   .filter(':odd')
+		   .css('color', 'blue');
+	
+/* 
+	<=============Filter 선택자의 종류=============> 
+	요소: contains(문자열) 특정 문자열을 포함하는 문서의 객체를 선택
+	요소: eq(n) n번째에 위치하는 문서 객체를 선택함
+	요소: gt(n) n번째 초과에 위치하는 문서 객체를 선택함
+	요소: has(h1) h1태그를 가지고 있는 문서 객체를 선택함
+	요소: lt(n) n번째 미만에 위치하는 문서 객체를 선택함
+	요소: not(선택자) 선택자와 일치하지 않는 문서 객체를 선택함
+	요소: nth-child(3n+1) 3n+1번째에 위치하는 문서 객체를 선택함
+ */
+</script>
+</body>
+</html>

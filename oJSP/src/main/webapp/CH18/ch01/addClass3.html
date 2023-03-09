@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.highlight0{
+		background-color:violet;
+	}
+	.highlight1{
+		background-color: red;
+	}
+	.highlight2{
+		background-color: orange;
+	}
+	.highlight3{
+		background-color: yellow;
+	}
+	.highlight4{
+		background-color: green;
+	}
+	.highlight5{
+		background-color: blue;
+	}
+	.highlight6{
+		background-color: navy;
+	}
+	
+	.highlight6{
+		background-color: white;
+	}
+	
+</style>
+</head>
+<body>
+	<h1>0</h1>
+	<h1>1</h1>
+	<h1>2</h1>
+	<h1>3</h1>
+	<h1>4</h1>
+	<h1>5</h1>
+	<h1>6</h1>
+	<h1>7</h1>
+	
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+								//자체적으로 추가되는 객체 
+		 $('h1').each(function(index, item) {
+			$(item).addClass('highlight' + index);
+		})
+	})
+
+
+</script>
+</body>
+</html>

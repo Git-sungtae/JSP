@@ -19,4 +19,15 @@
 		<param-name>DBName2</param-name>
 		<param-value>Mysql</param-value>
 	</context-param>
+	
+	<!-- filter url mapping -->
+<filter>
+	<filter-name>simple-filter</filter-name>
+	<filter-class>och17.SimpleFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>simple-filter</filter-name>
+	<url-pattern>/CH17/sub1/*</url-pattern>
+</filter-mapping>
+	
 </web-app>

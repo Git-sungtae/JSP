@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		table-layout: auto;
+		width: 75%
+	}
+	td {
+		color: blue;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>1구슬</td>
+			<td>2구슬</td>
+		</tr>
+		<tr>
+			<td>3구슬</td>
+			<td>4구슬</td>
+		</tr>
+		<tr>
+			<td>5구슬</td>
+			<td>6구슬</td>
+		</tr>
+	</table>
+	
+	
+	
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('td:first').css('color', 'red')
+					 //td : odd → 홀수(인덱스 기준), td : even → 짝수
+					 .add('td:odd')
+					 .css('background-color', 'orange')
+					 .css('font-size', '30pt')
+					 //.eq(n)으로 n번째 인덱스 선택 가능
+					 //.eq(음수)면, 끝에서부터 거꾸로 인덱스를 적용
+					 .add('td').eq(2).css('background-color', 'hotpink')
+					 .add('td').last().css('background-color', 'skyblue')
+					 ;
+		
+	})
+
+
+</script>
+</body>
+</html>

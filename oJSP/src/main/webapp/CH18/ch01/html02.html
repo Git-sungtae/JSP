@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>비가 오려나</h1>
+	<p>태풍아</p>
+	<div>천등이 돼라</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	/* 생략되지않은 전체 jquery */
+ 	$(document).ready(function() {
+		$('h1').css('color', 'red');
+		$('p').css('color', 'green');
+	})
+	/* 생략한 jquery */	
+	/* cascade한 css와는 달리 함수이므로 계층상관없이 순서대로 적용 */
+	/* $()를 jQuery()로도 사용가능 */
+	$(function() {
+		$('h1').css('color', 'red');
+		jQuery('p').css('color', 'green');
+		/* 전체선택자 '*' */
+		$('*').css('color', 'pink')
+	})
+
+
+
+</script>
+</body>
+</html>

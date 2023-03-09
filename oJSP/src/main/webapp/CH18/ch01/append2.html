@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	em{
+		font-size: 20pt;
+		line-height : 20pt;
+		margin: 20px;
+		color: blue;
+	}
+</style>
+</head>
+<!-- BODY : 조상 -->
+<body>
+	<!-- p : 자식1 -->
+	<!-- p : 자식3(em, em, span(손자로 em)) -->
+	<p>
+		<em>one</em>
+		<em>two</em>
+		<span>
+		<em>three</em>
+		</span>
+	</p>
+	
+	<!-- div1 : 자식2 -->
+	<!-- p : 자식3(em, span, em) -->
+	<div>
+	 	<em>four </em>
+		<span>
+		<em>five</em>
+		</span>
+		<em>six</em>
+
+	</div>
+	<hr />
+	
+	<!-- div2 : 자식3 -->
+	<div>
+		<span>ancestor descendant로 검색된 엘리먼트 : </span>
+		<span class="result1"></span>
+	</div>
+	
+	<!-- div3 : 자식3 -->
+	<div>
+		<span>parent > child로 검색된 엘리먼트 : </span>
+		<span class="result2"></span>
+	</div>	
+	
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//p의 자손이면서, 태그가 em인 모든 요소
+		$('p em').css('background-color', 'yellowgreen').each(function() {
+			$('.result1').append($(this).text());
+		});
+		
+		//div의 바로 뒤 layer의 em들만(span 밑의 em은 해당 안됨) : 자식만
+		$('div > em').css('background-color', 'black').each(function() {
+			$('.result2').append($(this).text());
+		});
+		
+		//console에 적용된 요소 개수 출력
+		console.log("검색된 요소 개수 : " + $('p em').length);
+		console.log("검색된 요소 개수 : " + $('div > em').length);
+	})
+</script>	
+</body>
+</html>
