@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script defer="defer" type="text/javascript" src="../js/httpRequest.js"></script>
+<script defer="defer" type="text/javascript">
+	function chk() {
+		alert("chk확인" + 1);
+		let params = "name=" + encodeURIComponent(frm.name.value);
+		//sendRequest("url(서버프로그램)", params, callBack함수, method);
+		sendRequest("hello.jsp", params, callBackFun, "POST");
+	}
+	
+	//콜백 함수
+	function callBackFun() {
+		alert("callBackFun확인");
+		if (httpRequest.readyState == 4) {
+			if (httpRequest.status == 200) {
+				let text1 = httpRequest.responseText;
+				let start = text1.indexOf("<body>");
+				let end = text1.indexOf("</body>");
+				let text2 = text1.substring(start+6, end);
+				alert(text1);
+				alert(text2);
+			} else alert("Server 오류");
+		}
+	}
+
+</script>
+</head>
+<body>
+	<h2>이름을 입력하세요</h2>
+	<form action="" name="frm">
+		<input type="text" name="name"><p />
+		<input type="button" value="확인" onclick="chk()"><p />
+	
+	</form>
+	
+	
+</body>
+</html>
