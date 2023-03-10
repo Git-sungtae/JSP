@@ -16,6 +16,7 @@
 	function callBackFun() {
 		alert("callBackFun확인");
 		if (httpRequest.readyState == 4) {
+			
 			if (httpRequest.status == 200) {
 				let text1 = httpRequest.responseText;
 				let start = text1.indexOf("<body>");

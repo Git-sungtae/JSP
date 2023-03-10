@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/httpRequest.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$('#sub').click(function() {
+			let sendData = $('form[name="frm"]').serialize();
+			alert('sendData : ' + sendData);
+			
+			//ajax세팅
+			$.ajaxSetup({
+				type : 'GET',
+				url : 'checkin.jsp',
+				dataType : 'text',
+				success : function(data) {
+					$('#msg').html(data);
+				}
+			});
+			
+			$.ajax({
+				data : sendData
+			});
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<form action="" name="frm">
+		이름 : <input type="text" name="name" id="name"><p />
+		비밀번호 : <input type="password" name="pw" id="pw"><p />
+		<input type="button" id = "sub" value="확인">
+	</form>
+	<div id = "msg">
+	</div>
+</body>
+</html>
