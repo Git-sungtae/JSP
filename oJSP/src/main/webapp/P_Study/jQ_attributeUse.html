@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<p> Hi <b>there!</b> </p>
+		<input type="text" name ="title">
+		<button name = "chk1">확인</button>
+
+<div>
+	출력<p />
+</div>
+
+<script src="../CH19/js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('button[name = "chk1"]').click(function() {
+			let textVal =  $('p').text(); //Hi there!
+			let htmlVal =  $('p').html(); //<p> Hi there! </p>
+			let valVal = $('input[name = "title"]').val(); //
+				
+			$('div').append('textVal : '+textVal + '<p/>');
+			$('div').append('htmlVal : '+htmlVal + '<p/>');
+			$('div').append('valVal : '+valVal);
+		})		
+	})
+
+</script>
+</body>
+</html>
